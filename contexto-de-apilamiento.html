@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<!--Indica que estamos usando html5-->
+<html lang="es">
+  <!--Definimos como lenguaje el español.-->
+  <head>
+    <!--Para que se pueden leer caracteres especiales-->
+    <meta charset="UTF-8" />
+    <!--Etiqueta SEO para motores de busqueda-->
+    <meta name="description" content="Descripcion de nuestra web" />
+    <!--Etiqueta SEO para robots de busqueda-->
+    <meta name="robots" content="index, follow" />
+    <!--Etiqueta necesaria para trabajar con resposive design-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--Para agregar compatibilidad con internet explorer-->
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <!--Titulo del documento-->
+    <title>Contenxto_de_apilamiento</title>
+    <style>
+      body {
+        display: grid;
+        height: 100vh;
+        margin: 0;
+        place-items: center;
+        width: 100%;
+      }
+      .phone {
+        background: #ccefff;
+        border-radius: 40px;
+        border: 8px solid black;
+        box-shadow: 0 19px 38px rgb(0, 0, 0, 0.3),
+          0 15px 12px rgb(0, 0, 0, 0.22);
+        height: 600px;
+        position: relative;
+        width: 300px;
+      }
+      .phone > * {
+        position: absolute;
+      }
+      /* Conejo 1 */
+      .layer-1 {
+        background: #ffffff;
+        bottom: 0;
+        height: 450px;
+        right: 60px;
+        width: 80px;
+        z-index: 1;
+      }
+      /* Conejo 2 */
+      .layer-2 {
+        background: #ffffff;
+        bottom: 0;
+        height: 450px;
+        left: 60px;
+        width: 80px;
+        z-index: 2;
+      }
+      /* Muro 1 */
+      .layer-3 {
+        background: wheat;
+        bottom: 0;
+        height: 400px;
+        left: 0;
+        margin: 0 auto;
+        right: 0;
+        width: 230px;
+        border: 1px solid red;
+        z-index: 3;
+      }
+      /* Conejo 3 */
+      .layer-4 {
+        background: #ffffff;
+        bottom: 0;
+        height: 330px;
+        left: 50px;
+        width: 80px;
+        z-index: 4;
+      }
+      /* Muro 2 */
+      .layer-5 {
+        background: wheat;
+        bottom: 0;
+        height: 280px;
+        left: 0;
+        width: 170px;
+        border: 1px solid red;
+        z-index: 5;
+      }
+      /* Conejo 4 */
+      .layer-6 {
+        background: #ffffff;
+        bottom: 0;
+        height: 230px;
+        right: 20px;
+        width: 80px;
+        z-index: 6;
+      }
+      /* Muro 3 */
+      .layer-7 {
+        background: wheat;
+        bottom: 0;
+        height: 180px;
+        right: 0;
+        width: 170px;
+        border: 1px solid red;
+        z-index: 7;
+      }
+      /* Arbusto 1 */
+      .layer-8 {
+        background: green;
+        bottom: 0;
+        height: 120px;
+        right: 0;
+        left: 0;
+        margin: 0 auto;
+        width: 170px;
+        border: 1px solid red;
+        z-index: 8;
+      }
+      /* Arbusto 2 */
+      .layer-9 {
+        background: green;
+        bottom: 0;
+        height: 80px;
+        left: 0;
+        width: 100px;
+        border: 1px solid red;
+        z-index: 9;
+      }
+      /* Arbusto 3 */
+      .layer-10 {
+        background: green;
+        bottom: 0;
+        height: 80px;
+        right: 0;
+        width: 100px;
+        border: 1px solid red;
+        z-index: 10;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="phone">
+      <div class="layer-1"></div>
+      <div class="layer-2"></div>
+      <div class="layer-3"></div>
+      <div class="layer-4"></div>
+      <div class="layer-5"></div>
+      <div class="layer-6"></div>
+      <div class="layer-7"></div>
+      <div class="layer-8"></div>
+      <div class="layer-9"></div>
+      <div class="layer-10"></div>
+    </div>
+  </body>
+</html>
