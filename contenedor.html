@@ -15,6 +15,59 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <!--Titulo del documento-->
     <title>Animation Landia</title>
+    <style>
+      ul {
+        /* Seteamos el counter a 0 tomando como referencia el ul, el valor por default del counter es cero...pero tambien podriamos especificar un numero en especifico del cual el counter pueda partir */
+        counter-reset: game; /* counter-reset: game 5; -> En este caso el counter empezaria en 5 */
+      }
+      input:checked {
+        /* Cada vez que se le hace check a un input aumentamos +1, este es el valor por default...pero tambien podemos especificar un numero para que haga los incrementos tomando como referencia ese numero.
+        Incluso podemos hacer decrementos especificando el valor en negativo.
+        */
+        counter-increment: game; /* counter-increment: game 2; -> asi haria los incrementos en 2*/
+      }
+      .total-count::after {
+        /* Para mostrar el valor actual del counter, en este caso este valor ira cambiando dependiendo de cuantos inputs tenemos checkeados */
+        /* En este caso nuestro counter se llamara game, este nombre lo tomaran en cuenta las properties de 'counter-reset' y 'counter-incremet'*/
+        content: counter(game);
+      }
+    </style>
   </head>
-  <body></body>
+  <body>
+    <ul>
+      <li>
+        <input type="checkbox" />
+        <div class="shield"></div>
+      </li>
+      <li>
+        <input type="checkbox" />
+        <div class="shield"></div>
+      </li>
+      <li>
+        <input type="checkbox" />
+        <div class="shield"></div>
+      </li>
+      <li>
+        <input type="checkbox" />
+        <div class="shield"></div>
+      </li>
+      <li>
+        <input type="checkbox" />
+        <div class="shield"></div>
+      </li>
+      <li>
+        <input type="checkbox" />
+        <div class="shield"></div>
+      </li>
+      <li>
+        <input type="checkbox" />
+        <div class="shield"></div>
+      </li>
+      <li>
+        <input type="checkbox" />
+        <div class="shield"></div>
+      </li>
+    </ul>
+    <h3 class="total-count">Score:</h3>
+  </body>
 </html>
