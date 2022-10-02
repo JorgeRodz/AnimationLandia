@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<!--Indica que estamos usando html5-->
+<html lang="es">
+  <!--Definimos como lenguaje el español.-->
+  <head>
+    <!--Para que se pueden leer caracteres especiales-->
+    <meta charset="UTF-8" />
+    <!--Etiqueta SEO para motores de busqueda-->
+    <meta name="description" content="Descripcion de nuestra web" />
+    <!--Etiqueta SEO para robots de busqueda-->
+    <meta name="robots" content="index, follow" />
+    <!--Etiqueta necesaria para trabajar con resposive design-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--Para agregar compatibilidad con internet explorer-->
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <!--Titulo del documento-->
+    <title>Contenxto_de_apilamiento</title>
+    <style>
+      :root {
+        --dark-brown: #a54a38;
+        --light-brown: #bf624c;
+        --dark-green: #51af5e;
+        --light-green: #51af5e;
+        --shadow: 0 19px 38px rgba(0, 0, 0, 0.3),
+          0 15px 12px rgba(0, 0, 0, 0.22);
+      }
+      body {
+        display: grid;
+        height: 100vh;
+        margin: 0;
+        place-items: center;
+        width: 100%;
+      }
+      .phone {
+        background: #ccefff;
+        border-radius: 40px;
+        border: 8px solid black;
+        box-shadow: 0 19px 38px rgb(0, 0, 0, 0.3),
+          0 15px 12px rgb(0, 0, 0, 0.22);
+        height: 600px;
+        position: relative;
+        width: 300px;
+        overflow: hidden;
+      }
+      .phone > * {
+        position: absolute;
+      }
+      /* Bunny 1 */
+      .layer-1 {
+        bottom: 0;
+        height: 450px;
+        right: 60px;
+        width: 80px;
+        z-index: 1;
+      }
+      /* Bunny 2 */
+      .layer-2 {
+        bottom: 0;
+        height: 450px;
+        left: 60px;
+        width: 80px;
+        z-index: 2;
+      }
+      /* Wall 1 */
+      .layer-3 {
+        background: var(--light-brown);
+        border-radius: 20px;
+        box-shadow: var(--shadow);
+        bottom: 0;
+        height: 400px;
+        left: 0;
+        margin: 0 auto;
+        overflow: hidden;
+        position: absolute;
+        right: 0;
+        width: 220px;
+        z-index: 3;
+      }
+      /* Bunny 3 */
+      .layer-4 {
+        bottom: 0;
+        height: 350px;
+        left: 20px;
+        width: 80px;
+        z-index: 4;
+      }
+      /* Wall 2 */
+      .layer-5 {
+        background: var(--light-brown);
+        border-radius: 20px;
+        box-shadow: var(--shadow);
+        bottom: 0;
+        height: 300px;
+        overflow: hidden;
+        position: absolute;
+        width: 200px;
+        z-index: 5;
+      }
+      /* Bunny 4 */
+      .layer-6 {
+        bottom: 0;
+        height: 250px;
+        right: 20px;
+        width: 80px;
+        z-index: 6;
+      }
+      /* Wall 3 */
+      .layer-7 {
+        background: var(--light-brown);
+        border-radius: 20px;
+        box-shadow: var(--shadow);
+        bottom: 0;
+        height: 200px;
+        overflow: hidden;
+        position: absolute;
+        right: 0;
+        width: 150px;
+        z-index: 7;
+      }
+      /* Bush 1 */
+      .layer-8 {
+        bottom: 0;
+        height: 120px;
+        left: 0;
+        margin: 0 auto;
+        position: absolute;
+        right: 0;
+        width: 200px;
+        z-index: 8;
+      }
+      .layer-8__left-lawn {
+        background: var(--dark-green);
+        border-radius: 40px 40px 0 0;
+        bottom: 0;
+        display: inline-block;
+        height: 70%;
+        left: 0;
+        position: absolute;
+        width: 80px;
+      }
+
+      .layer-8__center-lawn {
+        background: var(--dark-green);
+        border-radius: 40px 40px 0 0;
+        bottom: 0;
+        display: inline-block;
+        height: 100%;
+        left: 60px;
+        position: absolute;
+        width: 80px;
+      }
+      .layer-8__right-lawn {
+        background: var(--dark-green);
+        border-radius: 40px 40px 0 0;
+        bottom: 0;
+        display: inline-block;
+        height: 80%;
+        left: 130px;
+        position: absolute;
+        width: 80px;
+      }
+      /* Bush 2 */
+      .layer-9 {
+        bottom: 0;
+        height: 100px;
+        position: absolute;
+        width: 120px;
+        z-index: 9;
+        overflow: hidden;
+      }
+      .layer-9__left-cloud {
+        background: white;
+        border-radius: 40px 40px 0 0;
+        display: inline-block;
+        height: 100%;
+        left: 0;
+        position: absolute;
+        width: 80px;
+      }
+      .layer-9__right-cloud {
+        background: white;
+        border-radius: 0 40px 30px 0;
+        bottom: 0;
+        display: inline-block;
+        height: 60%;
+        left: 80px;
+        position: absolute;
+        width: 40px;
+      }
+      /* Bush 3 */
+      .layer-10 {
+        bottom: 0;
+        height: 100px;
+        position: absolute;
+        right: 0;
+        width: 120px;
+        z-index: 10;
+      }
+
+      .layer-10__left-cloud {
+        background: white;
+        border-radius: 40px 0 0 30px;
+        bottom: 0;
+        display: inline-block;
+        height: 60%;
+        right: 80px;
+        position: absolute;
+        width: 40px;
+      }
+
+      .layer-10__right-cloud {
+        background: white;
+        border-radius: 40px 40px 0 0;
+        display: inline-block;
+        height: 100%;
+        right: 0px;
+        position: absolute;
+        width: 80px;
+      }
+      .left-ear--outer {
+        background: #ffffff;
+        border-radius: 90%;
+        width: 20px;
+        height: 50px;
+        position: absolute;
+        left: 10px;
+      }
+      .left-ear--inner {
+        background: pink;
+        border-radius: 90%;
+        width: 10px;
+        height: 50px;
+        position: absolute;
+        left: 15px;
+        top: 8px;
+      }
+      .right-ear--outer {
+        background: #ffffff;
+        border-radius: 90%;
+        width: 20px;
+        height: 50px;
+        position: absolute;
+        right: 10px;
+      }
+      .right-ear--inner {
+        background: pink;
+        border-radius: 90%;
+        width: 10px;
+        height: 50px;
+        position: absolute;
+        right: 15px;
+        top: 8px;
+      }
+      .head {
+        background: #ffffff;
+        border-radius: 50%;
+        height: 100px;
+        width: 80px;
+        position: absolute;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+        top: 25px;
+      }
+      .head_eye {
+        margin: 0 auto;
+        background: black;
+        border-radius: 50%;
+        width: 5px;
+        height: 5px;
+      }
+      .head_eye--left {
+        position: absolute;
+        left: 28px;
+        top: 12px;
+      }
+      .head_eye--right {
+        position: absolute;
+        right: 28px;
+        top: 12px;
+      }
+      .lawn {
+        background: var(--dark-green);
+        height: 20px;
+        width: 100%;
+      }
+      .land {
+        background: linear-gradient(
+              135deg,
+              var(--dark-green) 25%,
+              transparent 25%
+            ) -50px 0,
+          linear-gradient(-135deg, var(--dark-green) 25%, transparent 25%) -50px
+            0,
+          linear-gradient(45deg, var(--light-brown) 25%, transparent 25%),
+          linear-gradient(-45deg, transparent 25%, var(--dark-brown) 25%);
+        background-size: 33px 30px;
+        height: 30px;
+        width: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="phone">
+      <!-- Bunny 1 -->
+      <div class="layer-1">
+        <div class="left-ear--outer"></div>
+        <div class="left-ear--inner"></div>
+        <div class="right-ear--outer"></div>
+        <div class="right-ear--inner"></div>
+        <div class="head">
+          <div class="head_eye head_eye--left"></div>
+          <div class="head_eye head_eye--right"></div>
+        </div>
+      </div>
+      <!-- Bunny 2 -->
+      <div class="layer-2">
+        <div class="left-ear--outer"></div>
+        <div class="left-ear--inner"></div>
+        <div class="right-ear--outer"></div>
+        <div class="right-ear--inner"></div>
+        <div class="head">
+          <div class="head_eye head_eye--left"></div>
+          <div class="head_eye head_eye--right"></div>
+        </div>
+      </div>
+      <!-- Wall 1 -->
+      <div class="layer-3">
+        <div class="lawn"></div>
+        <div class="land"></div>
+      </div>
+      <!-- Bunny 3 -->
+      <div class="layer-4">
+        <div class="left-ear--outer"></div>
+        <div class="left-ear--inner"></div>
+        <div class="right-ear--outer"></div>
+        <div class="right-ear--inner"></div>
+        <div class="head">
+          <div class="head_eye head_eye--left"></div>
+          <div class="head_eye head_eye--right"></div>
+        </div>
+      </div>
+      <!-- Wall 2 -->
+      <div class="layer-5">
+        <div class="lawn"></div>
+        <div class="land"></div>
+      </div>
+      <!-- Bunny 4 -->
+      <div class="layer-6">
+        <div class="left-ear--outer"></div>
+        <div class="left-ear--inner"></div>
+        <div class="right-ear--outer"></div>
+        <div class="right-ear--inner"></div>
+        <div class="head">
+          <div class="head_eye head_eye--left"></div>
+          <div class="head_eye head_eye--right"></div>
+        </div>
+      </div>
+      <!-- Wall 3 -->
+      <div class="layer-7">
+        <div class="lawn"></div>
+        <div class="land"></div>
+      </div>
+      <!-- Bush 1 -->
+      <div class="layer-8">
+        <div class="layer-8__left-lawn"></div>
+        <div class="layer-8__center-lawn"></div>
+        <div class="layer-8__right-lawn"></div>
+      </div>
+      <!-- Bush 2 -->
+      <div class="layer-9">
+        <div class="layer-9__left-cloud"></div>
+        <div class="layer-9__right-cloud"></div>
+      </div>
+      <!-- Bush 3 -->
+      <div class="layer-10">
+        <div class="layer-10__left-cloud"></div>
+        <div class="layer-10__right-cloud"></div>
+      </div>
+    </div>
+  </body>
+</html>
