@@ -14,12 +14,12 @@
 - **HTML5** -> _for structure tags_
 - **CSS3** -> _Manage styles_
   - `animation` properties -> _to customize the animation_
-  - `@keyframe` -> _to set specific properties behavior on animation timeline_
+  - `@keyframes` -> _to set specific properties behavior on animation timeline_
   - `counter` function -> _to count how many checkbox are checked_
     - `counter-reset` property-> _to set the counter on an specific start number_
     - `counter-increment` property -> _to increment counter_
 
 ## 🤓 What I learned? 🧠
-- Reinforce  `animation` and `@keyframe` topic
+- Reinforce  `animation` and `@keyframes` topic
 - Learn how the `counter` function works
  - Learn how the `counter-reset` and `counter-increment` properties work alongside the counter function
